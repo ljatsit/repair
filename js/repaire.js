@@ -171,6 +171,8 @@
     let autoUpdateInterval;
     let lastDataHash = '';
 
+
+
     async function fetchEmployeeData() {
         try {
             console.log('🔄 ກຳລັງດຶງຂໍ້ມູນພະນັກງານຈາກ Sheet 3...');
@@ -223,8 +225,8 @@
         console.log('🔄 ອັບເດດ dropdown ດ້ວຍຂໍ້ມູນພະນັກງານ:', employeeData);
         
         const options = employeeData.map(emp => {
-            const empId = emp[0] || '';
-            const empName = emp[1] || '';
+            const empId = emp[1] || '';
+            const empName = emp[2] || '';
             const displayText = empName ? `${empId} - ${empName}` : empId;
             return `<option value="${empId}">${displayText}</option>`;
         }).join('');
